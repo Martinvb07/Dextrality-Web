@@ -1,4 +1,5 @@
 import { memo, useEffect, useState } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { CloseIcon, DiscordIcon, MenuIcon } from '../Icons/index';
 
 // Enlaces de navegación
@@ -7,6 +8,7 @@ const NAV_LINKS = [
   { href: '#noticias', label: 'NOTICIAS' },
   { href: '#modos', label: 'MODOS' },
   { href: '#equipo', label: 'EQUIPO' },
+  { href: '/guia', label: 'GUIA' }
 ];
 
 // Navegación principal
@@ -35,13 +37,33 @@ const Navbar = ({ onCopyIP }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const location = useLocation();
+  const navigate = useNavigate();
+
   const handleNavClick = (e, href) => {
-    e.preventDefault();
-    const target = document.querySelector(href);
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    // anchors (starting with '#') -> scroll to section, possibly after navigating to '/'
+    if (href.startsWith('#')) {
+      e.preventDefault();
+      const tryScroll = () => {
+        const target = document.querySelector(href);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      };
+
+      if (location.pathname !== '/') {
+        // navigate to home first, then scroll shortly after
+        navigate('/');
+        setTimeout(tryScroll, 60);
+      } else {
+        tryScroll();
+      }
+
+      setIsMobileMenuOpen(false);
+      return;
     }
-    setIsMobileMenuOpen(false);
+
+    // other hrefs handled elsewhere (e.g., routes)
   };
 
   return (
@@ -63,16 +85,26 @@ const Navbar = ({ onCopyIP }) => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-1">
-            {NAV_LINKS.map(link => (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={(e) => handleNavClick(e, link.href)}
-                className={`nav-link ${activeSection === link.href.slice(1) ? 'active' : ''}`}
-              >
-                {link.label}
-              </a>
-            ))}
+              {NAV_LINKS.map(link => (
+                link.href.startsWith('/') ? (
+                  <Link
+                    key={link.href}
+                    to={link.href}
+                    className={`nav-link ${location.pathname === link.href ? 'active' : ''}`}
+                  >
+                    {link.label}
+                  </Link>
+                ) : (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    onClick={(e) => handleNavClick(e, link.href)}
+                    className={`nav-link ${location.pathname === '/' && activeSection === link.href.slice(1) ? 'active' : ''}`}
+                  >
+                    {link.label}
+                  </a>
+                )
+              ))}
             <a
               href="https://discord.gg/HCkGBkDrNB"
               target="_blank"
@@ -111,14 +143,25 @@ const Navbar = ({ onCopyIP }) => {
       <div className={`${isMobileMenuOpen ? 'block' : 'hidden'} md:hidden bg-slate-800/98 border-t border-teal-500/30`}>
         <div className="px-4 py-4 space-y-2">
           {NAV_LINKS.map(link => (
-            <a
-              key={link.href}
-              href={link.href}
-              onClick={(e) => handleNavClick(e, link.href)}
-              className="block py-2 px-4 rounded-lg hover:bg-teal-500/20 transition-colors"
-            >
-              {link.label}
-            </a>
+            link.href.startsWith('/') ? (
+              <Link
+                key={link.href}
+                to={link.href}
+                className={`block py-2 px-4 rounded-lg hover:bg-teal-500/20 transition-colors ${location.pathname === link.href ? 'active' : ''}`}
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                {link.label}
+              </Link>
+            ) : (
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={(e) => handleNavClick(e, link.href)}
+                className="block py-2 px-4 rounded-lg hover:bg-teal-500/20 transition-colors"
+              >
+                {link.label}
+              </a>
+            )
           ))}
           <button
             onClick={onCopyIP}

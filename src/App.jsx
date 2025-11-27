@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Footer from './components/Footer/Footer';
 import GameModesSection from './components/GameModesSection/GameModesSection';
 import HeroSection from './components/HeroSection/HeroSection';
@@ -6,6 +7,7 @@ import LoadingScreen from './components/LoadingScreen/LoadingScreen';
 import Navbar from './components/Navbar/Navbar';
 import NewsSection from './components/NewsSection/NewsSection';
 import TeamSection from './components/TeamSection/TeamSection';
+import Guia from './pages/Guia';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -38,18 +40,28 @@ function App() {
       {/* Loading Screen */}
       <LoadingScreen isLoading={isLoading} />
 
-      {/* Main Content */}
+      {/* Main Content with Router */}
       <div className={`transition-opacity duration-500 ${isLoading ? 'opacity-0' : 'opacity-100'}`}>
-        <Navbar />
+        <BrowserRouter>
+          <Navbar />
 
-        <main>
-          <HeroSection />
-          <NewsSection />
-          <GameModesSection />
-          <TeamSection />
-        </main>
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <main>
+                  <HeroSection />
+                  <NewsSection />
+                  <GameModesSection />
+                  <TeamSection />
+                </main>
+              }
+            />
+            <Route path="/guia" element={<Guia />} />
+          </Routes>
 
-        <Footer />
+          <Footer />
+        </BrowserRouter>
       </div>
     </>
   );

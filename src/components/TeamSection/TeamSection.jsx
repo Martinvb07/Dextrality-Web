@@ -1,22 +1,39 @@
 import { memo, useEffect, useRef, useState } from 'react';
+import { DiscordIcon, GitHubIcon, GlobeIcon } from '../Icons';
 
-const TeamCard = memo(({ avatar, name, role, roleClass, bio }) => {
+const TeamCard = memo(({ avatar, name, roles, role, roleClass, bio, onSelect }) => {
+  const fallbackHead = 'https://mc-heads.net/avatar/Steve/128';
   return (
-    <div className="team-card">
+    <div className="team-card" tabIndex={0} onClick={onSelect} onKeyDown={(e) => { if (e.key === 'Enter') onSelect(); }}>
       <div className="team-avatar">
-        <img src={avatar} alt={name} />
+        <img
+          src={avatar}
+          alt={name}
+          onError={(e) => {
+            e.currentTarget.src = fallbackHead + '?fb=1';
+          }}
+        />
       </div>
       <h4 className="team-name">{name}</h4>
-      <span className={`team-role ${roleClass}`}>{role}</span>
+      {roles && roles.length > 0 ? (
+        <div className="team-roles">
+          {roles.map((r, idx) => (
+            <span key={idx} className={`team-role ${r.className}`}>{r.label}</span>
+          ))}
+        </div>
+      ) : (
+        <span className={`team-role ${roleClass}`}>{role}</span>
+      )}
       <p className="team-bio">{bio}</p>
     </div>
   );
 });
-
 TeamCard.displayName = 'TeamCard';
 
 const TeamSection = () => {
   const [isPaused, setIsPaused] = useState(false);
+  const [selectedMember, setSelectedMember] = useState(null);
+  const [showModal, setShowModal] = useState(false);
   const [isDragging, setIsDragging] = useState(false);
   const carouselRef = useRef(null);
   const trackRef = useRef(null);
@@ -27,19 +44,130 @@ const TeamSection = () => {
   const animationIdRef = useRef(null);
 
   const teamMembers = [
-    { id: 1, avatar: 'https://mc-heads.net/avatar/GermanAntonio/128', name: 'German Antonio', role: '👑 OWNER', roleClass: 'owner', bio: 'Fundador de Dextrality.' },
-    { id: 2, avatar: 'https://mc-heads.net/avatar/Himako/128', name: 'Himako', role: '⚜️ HIGH ADMIN', roleClass: 'admin', bio: 'Alto administrador del servidor.' },
-    { id: 3, avatar: 'https://mc-heads.net/avatar/Martind07/128', name: 'Martind07', role: '🛡️ ADMIN', roleClass: 'admin', bio: 'Administrador del servidor.' },
-    { id: 4, avatar: 'https://mc-heads.net/avatar/Gallus/128', name: 'Gallus', role: '📋 MANAGER', roleClass: 'manager', bio: 'Manager del equipo.' },
-    { id: 5, avatar: 'https://mc-heads.net/avatar/Gallus/128', name: 'Gallus', role: '🎯 COORDINADOR', roleClass: 'coordinator', bio: 'Coordinador del equipo.' },
-    { id: 6, avatar: 'https://mc-heads.net/avatar/David/128', name: 'David', role: '⚙️ CONFIG', roleClass: 'config', bio: 'Configurador del servidor.' },
-    { id: 7, avatar: 'https://mc-heads.net/avatar/Cardan/128', name: 'Cardan', role: '⚙️ CONFIG', roleClass: 'config', bio: 'Configurador del servidor.' },
-    { id: 8, avatar: 'https://mc-heads.net/avatar/Dany/128', name: 'Dany', role: '🔨 MODERADOR', roleClass: 'moderator', bio: 'Moderador del servidor.' },
-    { id: 9, avatar: 'https://mc-heads.net/avatar/Himako/128', name: 'Himako', role: '🏗️ BUILDER', roleClass: 'builder', bio: 'Constructor del servidor.' },
-    { id: 10, avatar: 'https://mc-heads.net/avatar/Gallus/128', name: 'Gallus', role: '🏗️ BUILDER', roleClass: 'builder', bio: 'Constructor del servidor.' },
-    { id: 11, avatar: 'https://mc-heads.net/avatar/Martind07/128', name: 'Martind07', role: '💻 DEVELOPER', roleClass: 'developer', bio: 'Desarrollador de plugins.' },
-    { id: 12, avatar: 'https://mc-heads.net/avatar/Hatsky/128', name: 'Hatsky', role: '🌟 TRIAL', roleClass: 'trial', bio: 'Miembro en pruebas.' },
-    { id: 13, avatar: 'https://mc-heads.net/avatar/iCHAVO/128', name: 'iCHAVO', role: '🌟 TRIAL', roleClass: 'trial', bio: 'Miembro en pruebas.' },
+    {
+      id: 1,
+      name: 'German Antonio',
+      mcName: 'DextralityEarth',
+      role: '👑 OWNER',
+      roleClass: 'owner',
+      bio: 'Fundador de Dextrality.',
+      bioLong: 'Desde la idea inicial hasta la visión actual del proyecto, lidera la estrategia, el equipo y las decisiones clave. Apasionado por crear una experiencia única y sostenible para la comunidad.',
+      achievements: ['Fundación del proyecto', 'Dirección general', 'Expansión de la comunidad'],
+      links: [ { label: 'Discord', url: 'https://discord.gg/dextrality' } ],
+      favoriteMode: 'Survival',
+      joinDate: '2024-01'
+    },
+    {
+      id: 2,
+      name: 'Himako',
+      mcName: 'Himako',
+      roles: [
+        { label: '⚜️ HIGH ADMIN', className: 'admin' },
+        { label: '🏗️ BUILDER', className: 'builder' }
+      ],
+      bio: 'Alto administrador y constructor del servidor.',
+      bioLong: 'Especialista en estructuración y soporte avanzado. Supervisa procesos internos y estándares de construcción, asegurando calidad y consistencia.',
+      achievements: ['Optimización de builds', 'Mentoría de staff'],
+      links: [ { label: 'Portafolio', url: '#' } ],
+      favoriteMode: 'Creative',
+      joinDate: '2024-02'
+    },
+    {
+      id: 3,
+      name: 'Martind07',
+      mcName: 'Martind07',
+      roles: [
+        { label: '🛡️ ADMIN', className: 'admin' },
+        { label: '💻 DEVELOPER', className: 'developer' }
+      ],
+      bio: 'Administrador y desarrollador del servidor.',
+      bioLong: 'Enfocado en sistemas estables, escalabilidad y nuevas funcionalidades. Implementa integraciones y optimiza la experiencia técnica.',
+      achievements: ['Sistema de eventos', 'Infraestructura técnica', 'Automatizaciones internas'],
+      links: [ { label: 'GitHub', url: 'https://github.com/Martinvb07' } ],
+      favoriteMode: 'Survival',
+      joinDate: '2024-06'
+    },
+    {
+      id: 4,
+      name: 'Gallus',
+      mcName: 'GallusReiniger_',
+      roles: [
+        { label: '📋 MANAGER', className: 'manager' },
+        { label: '🎯 COORDINADOR', className: 'coordinator' },
+        { label: '🏗️ BUILDER', className: 'builder' }
+      ],
+      bio: 'Manager, coordinador y constructor del equipo.',
+      bioLong: 'Mantiene el flujo organizativo y coordina áreas para cumplir objetivos. Refuerza comunicación y planificación.',
+      achievements: ['Gestión de proyectos', 'Estandarización de procesos'],
+      links: [],
+      favoriteMode: 'Adventure',
+      joinDate: '2024-03'
+    },
+    {
+      id: 5,
+      name: 'David',
+      mcName: 'BloodySanji',
+      role: '⚙️ CONFIG',
+      roleClass: 'config',
+      bio: 'Configurador del servidor.',
+      bioLong: 'Configura y ajusta sistemas clave, asegurando compatibilidad y balance.',
+      achievements: ['Optimización de plugins', 'Balance de modos'],
+      links: [],
+      favoriteMode: 'Survival',
+      joinDate: '2024-05'
+    },
+    {
+      id: 6,
+      name: 'Cardan',
+      mcName: 'Cardan91',
+      role: '⚙️ CONFIG',
+      roleClass: 'config',
+      bio: 'Configurador del servidor.',
+      bioLong: 'Apoya en ajustes finos y pruebas internas para nuevos módulos.',
+      achievements: ['Soporte técnico interno'],
+      links: [],
+      favoriteMode: 'Survival',
+      joinDate: '2024-04'
+    },
+    {
+      id: 7,
+      name: 'Dany',
+      mcName: 'Danygch1',
+      role: '🔨 MODERADOR',
+      roleClass: 'moderator',
+      bio: 'Moderador del servidor.',
+      bioLong: 'Supervisa la comunidad y fomenta la convivencia, gestionando reportes y dudas.',
+      achievements: ['Gestión de comunidad'],
+      links: [],
+      favoriteMode: 'Survival',
+      joinDate: '2024-07'
+    },
+    {
+      id: 8,
+      name: 'Hatsky',
+      mcName: 'Willyrex',
+      role: '🌟 TRIAL',
+      roleClass: 'trial',
+      bio: 'Miembro en pruebas.',
+      bioLong: 'En periodo de adaptación aportando apoyo básico y aprendiendo protocolos.',
+      achievements: ['Integración al equipo'],
+      links: [],
+      favoriteMode: 'Survival',
+      joinDate: '2024-08'
+    },
+    {
+      id: 9,
+      name: 'iCHAVO',
+      mcName: 'iCHAVO',
+      role: '🌟 TRIAL',
+      roleClass: 'trial',
+      bio: 'Miembro en pruebas.',
+      bioLong: 'Participa en tareas iniciales y colabora en pequeñas mejoras.',
+      achievements: ['Apoyo operativo'],
+      links: [],
+      favoriteMode: 'Survival',
+      joinDate: '2024-08'
+    }
   ];
 
   // Triplicar miembros para el loop infinito
@@ -92,27 +220,22 @@ const TeamSection = () => {
 
   const handleMouseMove = (e) => {
     if (!isDragging) return;
-
     const x = e.pageX;
     const walk = x - startXRef.current;
     let newTranslate = scrollLeftRef.current + walk;
-
-    // Mantener dentro de límites para loop infinito
     if (newTranslate > 0) {
       newTranslate = -originalSetWidth * 2 + newTranslate;
     } else if (Math.abs(newTranslate) >= originalSetWidth * 3) {
       newTranslate = newTranslate + originalSetWidth * 2;
     }
-
     currentTranslateRef.current = newTranslate;
     if (trackRef.current) {
       trackRef.current.style.transform = `translateX(${newTranslate}px)`;
     }
   };
 
-  const handleClick = () => {
+  const handleClickCarousel = () => {
     if (isDragging) return;
-
     if (isPaused) {
       setIsPaused(false);
     } else {
@@ -121,7 +244,21 @@ const TeamSection = () => {
     }
   };
 
-  // Touch events
+  const openMemberModal = (member) => {
+    if (isDragging) return;
+    setSelectedMember(member);
+    setShowModal(true);
+    setIsPaused(true);
+    if (resumeTimeoutRef.current) clearTimeout(resumeTimeoutRef.current);
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
+    setSelectedMember(null);
+    setIsPaused(false);
+    scheduleResume();
+  };
+
   const handleTouchStart = (e) => {
     setIsDragging(true);
     setIsPaused(true);
@@ -131,17 +268,14 @@ const TeamSection = () => {
 
   const handleTouchMove = (e) => {
     if (!isDragging) return;
-
     const x = e.touches[0].pageX;
     const walk = x - startXRef.current;
     let newTranslate = scrollLeftRef.current + walk;
-
     if (newTranslate > 0) {
       newTranslate = -originalSetWidth * 2 + newTranslate;
     } else if (Math.abs(newTranslate) >= originalSetWidth * 3) {
       newTranslate = newTranslate + originalSetWidth * 2;
     }
-
     currentTranslateRef.current = newTranslate;
     if (trackRef.current) {
       trackRef.current.style.transform = `translateX(${newTranslate}px)`;
@@ -153,61 +287,42 @@ const TeamSection = () => {
     scheduleResume();
   };
 
-  // Animación continua
   useEffect(() => {
     const velocity = 0.5;
-
     const animate = () => {
       if (!isPaused && !isDragging && trackRef.current) {
         currentTranslateRef.current -= velocity;
-
-        // Reset cuando llegamos al primer set duplicado
         if (Math.abs(currentTranslateRef.current) >= originalSetWidth) {
           currentTranslateRef.current = 0;
         }
-
         trackRef.current.style.transform = `translateX(${currentTranslateRef.current}px)`;
       }
       animationIdRef.current = requestAnimationFrame(animate);
     };
-
     animationIdRef.current = requestAnimationFrame(animate);
-
     return () => {
-      if (animationIdRef.current) {
-        cancelAnimationFrame(animationIdRef.current);
-      }
+      if (animationIdRef.current) cancelAnimationFrame(animationIdRef.current);
     };
   }, [isPaused, isDragging, originalSetWidth]);
 
-  // Cleanup timeout on unmount
   useEffect(() => {
     return () => {
-      if (resumeTimeoutRef.current) {
-        clearTimeout(resumeTimeoutRef.current);
-      }
+      if (resumeTimeoutRef.current) clearTimeout(resumeTimeoutRef.current);
     };
   }, []);
 
   return (
     <section id="equipo" className="relative py-24 bg-gradient-to-b from-slate-800 to-slate-900 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="section-title">
-            <span className="text-gradient">Conoce al Equipo</span>
-          </h2>
-          <p className="text-gray-400 mt-4">
-            Las personas que hacen posible Dextrality
-          </p>
+          <h2 className="section-title"><span className="text-gradient">Conoce al Equipo</span></h2>
+          <p className="text-gray-400 mt-4">Las personas que hacen posible Dextrality</p>
         </div>
-
-        {/* Team Carousel */}
         <div className="team-carousel-wrapper">
           <div
             ref={carouselRef}
             className={`team-carousel ${isDragging ? 'dragging' : ''}`}
-            onClick={handleClick}
+            onClick={(e) => { if (e.target === carouselRef.current) handleClickCarousel(); }}
             onMouseDown={handleMouseDown}
             onMouseUp={handleMouseUp}
             onMouseLeave={handleMouseLeave}
@@ -217,12 +332,80 @@ const TeamSection = () => {
             onTouchEnd={handleTouchEnd}
           >
             <div ref={trackRef} className={`team-track ${isPaused ? 'paused' : ''}`}>
-              {duplicatedMembers.map((member, index) => (
-                <TeamCard key={`${member.id}-${index}`} {...member} />
-              ))}
+              {duplicatedMembers.map((member, index) => {
+                const skinName = (member.mcName || member.name).trim();
+                const avatarUrl = `https://mc-heads.net/avatar/${skinName}/128?cb=${encodeURIComponent(skinName)}`;
+                return (
+                  <TeamCard
+                    key={`${member.id}-${index}`}
+                    {...member}
+                    avatar={avatarUrl}
+                    onSelect={() => openMemberModal(member)}
+                  />
+                );
+              })}
             </div>
           </div>
         </div>
+        {showModal && selectedMember && (
+          <div className="team-modal-overlay" role="dialog" aria-modal="true" onClick={closeModal}>
+            <div className="team-modal" onClick={(e) => e.stopPropagation()}>
+              <button className="team-modal-close" onClick={closeModal} aria-label="Cerrar">✕</button>
+              <div className="team-modal-body">
+                <div className="team-modal-skin">
+                  <img
+                    src={`https://mc-heads.net/body/${(selectedMember.mcName || selectedMember.name).trim()}/512?cb=${Date.now()}`}
+                    alt={`Skin de ${selectedMember.name}`}
+                    onError={(e) => { e.currentTarget.src = 'https://mc-heads.net/body/Steve/512?fb=1'; }}
+                  />
+                </div>
+                <div className="team-modal-info">
+                  <h3 className="team-modal-name">{selectedMember.name}</h3>
+                  <div className="team-modal-roles">
+                    {selectedMember.roles ? selectedMember.roles.map((r, i) => (
+                      <span key={i} className={`team-role ${r.className}`}>{r.label}</span>
+                    )) : (
+                      <span className={`team-role ${selectedMember.roleClass}`}>{selectedMember.role}</span>
+                    )}
+                  </div>
+                  <div className="team-modal-meta">
+                    {selectedMember.favoriteMode && <span><strong>Modo favorito:</strong> {selectedMember.favoriteMode}</span>}
+                    {selectedMember.joinDate && <span><strong>Ingreso:</strong> {selectedMember.joinDate}</span>}
+                  </div>
+                  <div className="team-modal-scroll">
+                    <p className="team-modal-bio">{selectedMember.bio}</p>
+                    {selectedMember.bioLong && <p className="team-modal-bio-long">{selectedMember.bioLong}</p>}
+                  </div>
+                  <div className="team-modal-achievements">
+                    <h4 className="team-modal-subtitle">Logros</h4>
+                    {selectedMember.achievements && selectedMember.achievements.length > 0 ? (
+                      <ul>
+                        {selectedMember.achievements.map((a, idx) => <li key={idx}>{a}</li>)}
+                      </ul>
+                    ) : <p className="team-modal-empty">Sin logros registrados todavía.</p>}
+                  </div>
+                  {selectedMember.links && selectedMember.links.length > 0 && (
+                    <div className="team-modal-social">
+                      {selectedMember.links.map(l => {
+                        const lower = l.label.toLowerCase();
+                        const domain = l.url.toLowerCase();
+                        let Icon = GlobeIcon;
+                        if (domain.includes('github') || lower.includes('github')) Icon = GitHubIcon;
+                        else if (domain.includes('discord') || lower.includes('discord')) Icon = DiscordIcon;
+                        else if (lower.includes('portafolio') || lower.includes('portfolio')) Icon = GlobeIcon;
+                        return (
+                          <a key={l.url} href={l.url} target="_blank" rel="noreferrer" aria-label={l.label} className="social-icon-btn">
+                            <Icon className="w-6 h-6" />
+                          </a>
+                        );
+                      })}
+                    </div>
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );
