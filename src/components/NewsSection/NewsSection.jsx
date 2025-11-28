@@ -58,10 +58,10 @@ const NewsSection = () => {
       ],
       code: `# Ejemplo de configuración\nmax-players: 120\nview-distance: 10\nspawn-protection: 0`,
       attachments: [
-        { type: 'image', url: './images/Reapertura1.png'},
-        { type: 'image', url: './images/Reapertura2.png' },
-        { type: 'image', url: './images/Reapertura3.png' },
-        { type: 'image', url: './images/Reapertura4.png' }
+        { type: 'image', url: '/Reapertura/Reapertura1.png' },
+        { type: 'image', url: '/Reapertura/Reapertura2.png' },
+        { type: 'image', url: '/Reapertura/Reapertura3.png' },
+        { type: 'image', url: '/Reapertura/Reapertura4.png' }
       ]
     },
     {
@@ -247,7 +247,6 @@ const NewsSection = () => {
                       </ul>
                     </div>
                   )}
-                  {/* Redes ocultadas por petición; se conserva data pero no se muestra */}
                 </div>
               </div>
             </div>

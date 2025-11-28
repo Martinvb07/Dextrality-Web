@@ -105,19 +105,6 @@ const TeamSection = () => {
     },
     {
       id: 5,
-      name: 'David',
-      mcName: 'BloodySanji',
-      role: '⚙️ CONFIG',
-      roleClass: 'config',
-      bio: 'Configurador del servidor.',
-      bioLong: 'Configura y ajusta sistemas clave, asegurando compatibilidad y balance.',
-      achievements: ['Optimización de plugins', 'Balance de modos'],
-      links: [],
-      favoriteMode: 'Survival',
-      joinDate: '2024-05'
-    },
-    {
-      id: 6,
       name: 'Cardan',
       mcName: 'Cardan91',
       role: '⚙️ CONFIG',
@@ -130,7 +117,7 @@ const TeamSection = () => {
       joinDate: '2024-04'
     },
     {
-      id: 7,
+      id: 6,
       name: 'Dany',
       mcName: 'Danygch1',
       role: '🔨 MODERADOR',
@@ -143,7 +130,7 @@ const TeamSection = () => {
       joinDate: '2024-07'
     },
     {
-      id: 8,
+      id: 7,
       name: 'Hatsky',
       mcName: 'Willyrex',
       role: '🌟 TRIAL',
@@ -156,7 +143,7 @@ const TeamSection = () => {
       joinDate: '2024-08'
     },
     {
-      id: 9,
+      id: 8,
       name: 'iCHAVO',
       mcName: 'iCHAVO',
       role: '🌟 TRIAL',

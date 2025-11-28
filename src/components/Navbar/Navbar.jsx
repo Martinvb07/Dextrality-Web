@@ -8,7 +8,7 @@ const NAV_LINKS = [
   { href: '#noticias', label: 'NOTICIAS' },
   { href: '#modos', label: 'MODOS' },
   { href: '#equipo', label: 'EQUIPO' },
-  { href: '/guia', label: 'GUIA' }
+  { href: '/guias', label: 'GUIAS' }
 ];
 
 // Navegación principal
@@ -76,7 +76,7 @@ const Navbar = ({ onCopyIP }) => {
           {/* Logo */}
           <div className="flex items-center space-x-3 group cursor-pointer">
             <img
-              src="logo_fin_fondo.png"
+              src="/logo_fin_fondo.png"
               alt="Dextrality Logo"
               className="w-11 h-11 object-contain group-hover:scale-105 transition-transform duration-300 logo-glow"
             />

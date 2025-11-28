@@ -9,7 +9,7 @@ const Footer = () => {
           <div className="text-center md:text-left">
             <div className="flex items-center justify-center md:justify-start space-x-3 mb-4">
               <img
-                src="logo_fin_fondo.png"
+                src="/logo_fin_fondo.png"
                 alt="Dextrality Logo"
                 className="w-13 h-13 object-contain logo-glow"
                 style={{ width: '52px', height: '52px' }}
@@ -31,7 +31,14 @@ const Footer = () => {
           </div>
         </div>
         <div className="border-t border-gray-800 mt-8 pt-8 text-center">
-          <p className="text-gray-500 text-sm">2025 Dextrality Network. By Daven | 🌷</p>
+          <div className="flex items-center justify-center gap-3">
+            <img
+              src="https://minotar.net/avatar/Martind07/48.png"
+              alt="Martin avatar"
+              className="w-10 h-10 rounded-md shadow"
+            />
+            <p className="text-gray-500 text-sm">2025 Dextrality Network. By Martin</p>
+          </div>
         </div>
       </div>
     </footer>

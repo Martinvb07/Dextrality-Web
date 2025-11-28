@@ -34,7 +34,7 @@ const LoadingScreen = ({ isLoading }) => {
         {/* Logo */}
         <div className="loading-logo">
           <img
-            src="logo_fin_fondo.png"
+            src="/logo_fin_fondo.png"
             alt="Dextrality"
             className="w-full h-full object-contain logo-glow"
           />
