@@ -10,11 +10,13 @@ import TeamSection from './components/TeamSection/TeamSection';
 import GuiasIndex from './pages/Guias/Index';
 import guides from './pages/Guias/guides';
 
+// IMPORTANTE: loader con import.meta.glob
+import { loadGuide } from './pages/Guias/loader';
+
 function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Minimum loading time of 2 seconds for the loading animation
     const minLoadTime = 2000;
     const startTime = Date.now();
 
@@ -27,7 +29,6 @@ function App() {
       }, remaining);
     };
 
-    // Check if page is already loaded
     if (document.readyState === 'complete') {
       handleLoad();
     } else {
@@ -41,12 +42,13 @@ function App() {
       {/* Loading Screen */}
       <LoadingScreen isLoading={isLoading} />
 
-      {/* Main Content with Router */}
+      {/* Main Content */}
       <div className={`transition-opacity duration-500 ${isLoading ? 'opacity-0' : 'opacity-100'}`}>
         <BrowserRouter>
           <Navbar />
 
           <Routes>
+            {/* HOME */}
             <Route
               path="/"
               element={
@@ -58,10 +60,17 @@ function App() {
                 </main>
               }
             />
+
+            {/* Redirección */}
             <Route path="/guia" element={<Navigate to="/guias" replace />} />
+
+            {/* Índice de guías */}
             <Route path="/guias" element={<GuiasIndex />} />
+
+            {/* GUÍAS DINÁMICAS */}
             {guides.map((g) => {
-              const LazyComp = React.lazy(() => import(`./pages/Guias/${g.component}`));
+              const LazyComp = React.lazy(() => loadGuide(g.component));
+
               return (
                 <Route
                   key={g.id}
