@@ -9,9 +9,8 @@ import NewsSection from './components/NewsSection/NewsSection';
 import TeamSection from './components/TeamSection/TeamSection';
 import GuiasIndex from './pages/Guias/Index';
 import guides from './pages/Guias/guides';
+import { loadGuide } from './pages/Guias/loader.js';
 
-// IMPORTANTE: loader con import.meta.glob
-import { loadGuide } from './pages/Guias/loader';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);

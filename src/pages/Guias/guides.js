@@ -1,5 +1,3 @@
-// Central registry of guides. Add new entries here to expose them
-// in the Guías index and to automatically register routes.
 const guides = [
   {
     id: 'guia-general',
