@@ -3,6 +3,16 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "contributors": [
+    {
+      "name": "Martinvb07",
+      "url": "https://github.com/Martinvb07"
+    },
+    {
+      "name": "Davidcrz14",
+      "url": "https://github.com/Davidcrz14"
+    }
+  ],
   "scripts": {
     "dev": "vite",
     "build": "vite build",

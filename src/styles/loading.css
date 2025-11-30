@@ -1,0 +1,25 @@
+
+@layer components {
+	/* Loading screen and Minecraft loader */
+	.loading-title { font-family: inherit; font-size: 1.5rem; background: linear-gradient(135deg, #6DCCC1 0%, #4ecdc4 40%, #D4A843 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; letter-spacing: 0.1em; }
+	.loading-subtitle { font-family: inherit; font-size: 0.6rem; color: #94a3b8; animation: blink 1s step-end infinite; }
+	.loading-screen { opacity: 0; visibility: hidden; pointer-events: none; }
+	.loading-content { display: flex; flex-direction: column; align-items: center; gap: 1.5rem; }
+	.loading-logo { width: 100px; height: 100px; animation: logoFloat 2s ease-in-out infinite; }
+	.loading-logo-img { width: 100%; height: 100%; object-fit: contain; }
+	@keyframes logoFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+	.loading-text { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
+	.loading-title { font-family: "Press Start 2P", monospace; font-size: 1.5rem; background: linear-gradient(135deg, #6DCCC1 0%, #4ecdc4 40%, #D4A843 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; letter-spacing: 0.1em; }
+	.loading-subtitle { font-family: "Press Start 2P", monospace; font-size: 0.6rem; color: #94a3b8; animation: blink 1s step-end infinite; }
+	@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+
+	.loading-bar-container { width: 280px; height: 20px; background: #1e293b; border: 3px solid #374151; box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5), 0 0 10px rgba(109, 204, 193, 0.2); position: relative; overflow: hidden; }
+	.loading-bar { height: 100%; background: linear-gradient(90deg, #6DCCC1 0%, #4ecdc4 25%, #6DCCC1 50%, #4ecdc4 75%, #6DCCC1 100%); background-size: 200% 100%; animation: loadingProgress 2s ease-in-out infinite, shimmer 1.5s linear infinite; box-shadow: 0 0 10px rgba(109, 204, 193, 0.5); }
+	@keyframes loadingProgress { 0% { width: 0%; } 50% { width: 70%; } 100% { width: 100%; } }
+	@keyframes shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+
+	.loading-tips { margin-top: 1rem; padding: 0.75rem 1.5rem; background: rgba(30, 41, 59, 0.8); border: 2px solid rgba(109, 204, 193, 0.3); }
+	.loading-tip { font-family: inherit; font-size: 0.85rem; color: #D4A843; font-weight: 500; }
+
+	.mc-loader { --dur: 2.5s; filter: drop-shadow(0 0 10px rgba(109, 204, 193, 0.4)); }
+}

@@ -1,0 +1,11 @@
+@layer components {
+	/* Navigation / header styles */
+	.nav-link { padding: 0.5rem 1rem; font-size: 0.875rem; font-weight: 600; color: #94a3b8; border-radius: 0.5rem; transition: all 0.3s; }
+	.nav-link:hover, .nav-link.active { color: #6DCCC1; background: rgba(109, 204, 193, 0.15); }
+
+	.server-ip-btn { padding: 0.5rem 1rem; background: linear-gradient(135deg, rgba(109, 204, 193, 0.2) 0%, rgba(45, 212, 191, 0.2) 100%); border: 1px solid rgba(109, 204, 193, 0.4); border-radius: 0.75rem; transition: all 0.3s; }
+	.server-ip-btn:hover { background: linear-gradient(135deg, rgba(109, 204, 193, 0.35) 0%, rgba(45, 212, 191, 0.35) 100%); border-color: #6DCCC1; transform: translateY(-2px); box-shadow: 0 8px 25px rgba(109, 204, 193, 0.3); }
+
+	/* Ensure header uses pixel font */
+	.nav-link, .navbar a, .logo-text, .brand { font-family: 'MinecraftSeven-v2', 'Press Start 2P', monospace; -webkit-font-smoothing: none; text-rendering: geometricPrecision; }
+}

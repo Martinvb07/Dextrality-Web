@@ -1,66 +1,85 @@
 # 🎮 Dextrality Network
 
-Sitio web oficial del servidor de Minecraft **Dextrality Network** - Java & Bedrock.
+Sitio web oficial del servidor de Minecraft Dextrality Network - Java & Bedrock.
 
 ## 🚀 Tecnologías
 
-- **React 18** - Librería UI
-- **Vite** - Build tool ultra rápido
-- **Tailwind CSS** - Estilos utilitarios
-- **ESLint** - Linting de código
+- React 18 - Librería UI
+- Vite - Build tool ultra rápido
+- Tailwind CSS - Estilos utilitarios
+- ESLint - Linting de código
 
-## 📁 Estructura del Proyecto
+## 📁 Estructura del Proyecto (resumen actual)
 
 ```
 Dextrality-Web/
-├── public/                    # Archivos estáticos
-│   ├── Banner.png            # Banner principal
-│   ├── logo.png              # Logo del servidor
-│   ├── logo_fin_fondo.png    # Logo sin fondo
-│   ├── earth.png             # Imagen modo Earth
-│   ├── 1910.png              # Imagen modo 1910
-│   └── images/team/          # Fotos del equipo
-│
-├── src/
-│   ├── main.jsx              # Punto de entrada
-│   ├── App.jsx               # Componente principal
-│   ├── index.css             # Estilos globales
-│   ├── load.css              # Estilos del loader
-│   │
-│   └── components/
-│       ├── Navbar/           # Barra de navegación
-│       │   └── Navbar.jsx
-│       │
-│       ├── HeroSection/      # Sección principal (hero)
-│       │   ├── HeroSection.jsx
-│       │   └── StatCard.jsx  # Tarjetas de estadísticas
-│       │
-│       ├── NewsSection/      # Sección de noticias
-│       │   └── NewsSection.jsx
-│       │
-│       ├── GameModesSection/ # Modalidades de juego
-│       │   └── GameModesSection.jsx
-│       │
-│       ├── TeamSection/      # Equipo del servidor
-│       │   └── TeamSection.jsx  # Carrusel infinito
-│       │
-│       ├── Footer/           # Pie de página
-│       │   └── Footer.jsx
-│       │
-│       ├── LoadingScreen/    # Pantalla de carga
-│       │   ├── LoadingScreen.jsx
-│       │   └── MinecraftLoader.jsx  # Loader animado
-│       │
-│       └── Icons/            # Iconos SVG
-│           └── index.jsx
-│
+├── .gitignore
+├── CONTRIBUTOR S.md
 ├── index.html
 ├── package.json
-├── vite.config.js
-├── tailwind.config.js
+├── package-lock.json
 ├── postcss.config.js
-└── eslint.config.js
+├── tailwind.config.js
+├── vite.config.js
+├── eslint.config.js
+├── public/
+│   ├── Banner.png
+│   ├── logo.png
+│   ├── logo_fin_fondo.png
+# 🎮 Dextrality Network
+
+Sitio web oficial del servidor de Minecraft Dextrality Network - Java & Bedrock.
+
+## 🚀 Tecnologías
+
+- React 18 - Librería UI
+- Vite - Build tool ultra rápido
+- Tailwind CSS - Estilos utilitarios
+- ESLint - Linting de código
+
+## 📁 Estructura del Proyecto (resumen actual)
+
 ```
+
+Dextrality-Web/
+├── .gitignore
+├── CONTRIBUTORS.md
+├── index.html
+├── package.json
+├── package-lock.json
+├── postcss.config.js
+├── tailwind.config.js
+├── vite.config.js
+├── eslint.config.js
+├── public/
+│ ├── Banner.png
+│ ├── logo.png
+│ ├── logo_fin_fondo.png
+│ ├── earth.png
+│ ├── 1910.png
+│ └── Reapertura/
+├── src/
+│ ├── App.css
++│ ├── App.jsx
+│ ├── main.jsx
+│ ├── index.css
+│ ├── load.css
+│ ├── assets/
+│ │ └── fonts/
+│ ├── styles/
+│ ├── components/
+│ │ ├── Navbar/
+│ │ ├── HeroSection/
+│ │ ├── NewsSection/
+│ │ ├── GameModesSection/
+│ │ ├── TeamSection/
+│ │ ├── Footer/
+│ │ ├── LoadingScreen/
+│ │ └── Icons/
+│ └── pages/
+└── README.md
+
+````
 
 ## 🎯 Secciones
 
@@ -97,7 +116,7 @@ Dextrality-Web/
 --gold: #D4A843         /* Dorado */
 --bg-dark: #0f172a      /* Fondo oscuro */
 --bg-medium: #1e293b    /* Fondo medio */
-```
+````
 
 ## ✨ Características
 

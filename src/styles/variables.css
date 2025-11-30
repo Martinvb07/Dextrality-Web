@@ -1,0 +1,14 @@
+:root {
+  --primary: #6DCCC1;
+  --primary-dark: #4BA89E;
+  --primary-light: #8FE4DB;
+  --gold: #D4A843;
+  --gold-light: #E8C76B;
+  --gold-dark: #B8892F;
+  --brown: #8B5A2B;
+  --brown-dark: #5D3A1A;
+  --brown-light: #A67B4D;
+  --bg-dark: #0f172a;
+  --bg-medium: #1e293b;
+  --bg-card: rgba(30, 41, 59, 0.7);
+}

@@ -1,0 +1,22 @@
+@layer components {
+	/* Team carousel, cards and modal */
+	.team-carousel-wrapper { position: relative; overflow-x: hidden; overflow-y: visible; padding: 2rem 0; }
+	.team-carousel-wrapper::before, .team-carousel-wrapper::after { content: ""; position: absolute; top: 0; bottom: 0; width: 100px; z-index: 5; pointer-events: none; }
+	.team-carousel-wrapper::before { left: 0; background: radial-gradient(ellipse 80% 50% at 0% 50%, rgba(30, 41, 59, 1) 0%, rgba(30, 41, 59, 0.95) 40%, rgba(30, 41, 59, 0.7) 60%, rgba(30, 41, 59, 0) 100%); }
+	.team-carousel-wrapper::after { right: 0; background: radial-gradient(ellipse 80% 50% at 100% 50%, rgba(30, 41, 59, 1) 0%, rgba(30, 41, 59, 0.95) 40%, rgba(30, 41, 59, 0.7) 60%, rgba(30, 41, 59, 0) 100%); }
+	.team-carousel { width: 100%; overflow: visible; cursor: grab; }
+	.team-carousel:active { cursor: grabbing; }
+	.team-track { display: flex; gap: 1.5rem; width: max-content; will-change: transform; transition: none; }
+
+	.team-card { flex-shrink: 0; width: 220px; padding: 1.5rem; background: linear-gradient(135deg, rgba(30, 41, 59, 0.95), rgba(30, 41, 59, 0.85)); border: 1px solid rgba(109, 204, 193, 0.2); border-radius: 1.25rem; text-align: center; transition: all 0.4s ease; position: relative; user-select: none; outline: none; cursor: pointer; }
+	.team-card::before { content: ''; position: absolute; inset: 0; border-radius: 1.25rem; padding: 1px; background: linear-gradient(135deg, transparent, rgba(212, 168, 67, 0.3), transparent); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; opacity: 0; transition: opacity 0.4s; }
+	.team-card:hover { transform: translateY(-8px); border-color: rgba(212, 168, 67, 0.4); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(109, 204, 193, 0.1); }
+	.team-avatar { width: 80px; height: 80px; margin: 0 auto 1rem; border-radius: 50%; overflow: hidden; border: 3px solid rgba(109, 204, 193, 0.4); transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+	.team-name { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.25rem; }
+	.team-role { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; }
+	.team-role.owner { background: linear-gradient(135deg, #fbbf24, #f59e0b); color: #1e293b; }
+	.team-role.admin { background: linear-gradient(135deg, #ef4444, #dc2626); color: white; }
+	.team-modal-overlay { position: fixed; inset: 0; background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(6px); display: flex; align-items: center; justify-content: center; z-index: 1000; animation: fadeIn 0.25s ease forwards; }
+	.team-modal { width: min(900px, 95%); background: linear-gradient(135deg, rgba(30,41,59,0.95), rgba(30,41,59,0.9)); border: 1px solid rgba(109,204,193,0.3); border-radius: 1.5rem; padding: 2rem; position: relative; box-shadow: 0 25px 60px rgba(0,0,0,0.6), 0 0 40px rgba(109,204,193,0.15); animation: modalPop 0.35s cubic-bezier(0.22,1,0.36,1); max-height: 90vh; overflow: auto; }
+	.team-modal-close { position: absolute; top: 0.75rem; right: 0.75rem; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; background: rgba(109,204,193,0.15); border: 1px solid rgba(109,204,193,0.4); color: #6DCCC1; font-size: 1.1rem; border-radius: 0.75rem; cursor: pointer; transition: all 0.3s; }
+}

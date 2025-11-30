@@ -1,0 +1,33 @@
+
+@layer components {
+	/* Stat, News and Gamemode cards */
+	.stat-card { display: flex; flex-direction: column; align-items: center; padding: 1.25rem; background: linear-gradient(135deg, rgba(30, 41, 59, 0.95), rgba(30, 41, 59, 0.85)); border: 1px solid rgba(109, 204, 193, 0.25); border-radius: 1rem; transition: all 0.3s ease; position: relative; overflow: hidden; }
+	.stat-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--gold), transparent); opacity: 0.5; }
+	.stat-card:hover { transform: translateY(-3px); border-color: rgba(212, 168, 67, 0.3); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); }
+	.stat-number { font-family: inherit; font-size: 1.5rem; background: linear-gradient(135deg, #6DCCC1, #D4A843); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+	.stat-label { font-size: 0.75rem; color: #94a3b8; margin-top: 0.25rem; text-transform: uppercase; letter-spacing: 0.05em; }
+
+	.section-title { font-size: 2.5rem; font-weight: 700; }
+
+	.news-card { background: linear-gradient(135deg, rgba(30, 41, 59, 0.95), rgba(30, 41, 59, 0.85)); border: 1px solid rgba(109, 204, 193, 0.2); border-radius: 1.25rem; overflow: hidden; transition: all 0.4s ease; position: relative; }
+	.news-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--primary), var(--gold), var(--primary)); opacity: 0; transition: opacity 0.3s; }
+	.news-card:hover { transform: translateY(-8px); border-color: rgba(212, 168, 67, 0.4); box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4), 0 0 30px rgba(109, 204, 193, 0.1); }
+	.news-image { height: 200px; background-size: cover; background-position: center; }
+	.news-content { padding: 1.5rem; }
+	.news-tag { display: inline-block; padding: 0.25rem 0.75rem; background: rgba(109, 204, 193, 0.2); color: #6DCCC1; border-radius: 9999px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
+	.news-title { margin: 1rem 0 0.5rem; font-size: 1.25rem; font-weight: 600; }
+	.news-excerpt { color: #94a3b8; font-size: 0.95rem; }
+	.news-link { display: inline-flex; align-items: center; gap: 0.25rem; margin-top: 1rem; color: #6DCCC1; font-weight: 500; transition: gap 0.3s; }
+
+	.gamemode-card { padding: 2rem; background: linear-gradient(135deg, rgba(30, 41, 59, 0.95), rgba(30, 41, 59, 0.85)); border: 1px solid rgba(109, 204, 193, 0.2); border-radius: 1.25rem; text-align: center; transition: all 0.4s ease; position: relative; overflow: hidden; }
+	.gamemode-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--primary), var(--gold), var(--primary)); opacity: 0; transition: opacity 0.3s; }
+	.gamemode-icon { display: inline-flex; align-items: center; justify-content: center; width: 80px; height: 80px; border-radius: 1.25rem; margin-bottom: 1rem; position: relative; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); }
+	.gamemode-title { font-size: 1.5rem; font-weight: 600; margin-bottom: 0.5rem; }
+	.gamemode-desc { color: #94a3b8; font-size: 0.95rem; margin-bottom: 1rem; }
+	.gamemode-players { display: flex; align-items: center; justify-content: center; gap: 0.5rem; color: #64748b; font-size: 0.875rem; }
+	.dot { width: 8px; height: 8px; border-radius: 50%; animation: pulse 2s infinite; }
+	.dot.green { background: #22c55e; }
+	.dot.orange { background: #f97316; }
+	.dot.cyan { background: #06b6d4; }
+	@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+}

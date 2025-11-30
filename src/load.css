@@ -46,20 +46,20 @@
     gap: 0.5rem;
 }
 .loading-title {
-    font-family: "Press Start 2P", monospace;
-    font-size: 1.5rem;
-    background: linear-gradient(135deg, #6DCCC1 0%, #4ecdc4 40%, #D4A843 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.3);
-    letter-spacing: 0.1em;
+  font-family: inherit;
+  font-size: 1.5rem;
+  background: linear-gradient(135deg, #6DCCC1 0%, #4ecdc4 40%, #D4A843 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.3);
+  letter-spacing: 0.1em;
 }
 .loading-subtitle {
-    font-family: "Press Start 2P", monospace;
-    font-size: 0.6rem;
-    color: #94a3b8;
-    animation: blink 1s step-end infinite;
+  font-family: inherit;
+  font-size: 0.6rem;
+  color: #94a3b8;
+  animation: blink 1s step-end infinite;
 }
 @keyframes blink {
     0%, 100% { opacity: 1; }
@@ -104,10 +104,10 @@
     border: 2px solid rgba(109, 204, 193, 0.3);
 }
 .loading-tip {
-    font-family: "Fredoka", sans-serif;
-    font-size: 0.85rem;
-    color: #D4A843;
-    font-weight: 500;
+  font-family: inherit;
+  font-size: 0.85rem;
+  color: #D4A843;
+  font-weight: 500;
 }
 
 /* ===== HOURGLASS LOADER - MINECRAFT STYLE ===== */
