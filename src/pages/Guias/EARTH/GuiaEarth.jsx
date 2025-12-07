@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { GlobeAltIcon, MapPinIcon, ShieldCheckIcon, CommandLineIcon, FlagIcon, RocketLaunchIcon, MapIcon, CurrencyDollarIcon, Cog6ToothIcon, SparklesIcon, StarIcon } from '@heroicons/react/24/solid'
 
 export default function GuiaEarth() {
   return (
@@ -30,7 +31,10 @@ export default function GuiaEarth() {
 
           {/* Main Content */}
           <div className="lg:col-span-3">
-            <h1 className="text-3xl sm:text-4xl font-extrabold mb-4">🌍 Guía Oficial – Modalidad EARTH</h1>
+            <h1 className="text-3xl sm:text-4xl font-extrabold mb-4 flex items-center gap-2">
+              <GlobeAltIcon className="w-7 h-7 text-cyan-400" />
+              Guía Oficial – Modalidad EARTH
+            </h1>
 
             <p className="text-slate-300 mb-6">
               Bienvenido a <strong>Dextrality Earth</strong>. EARTH recrea el mapa del planeta Tierra dentro de Minecraft
@@ -44,7 +48,8 @@ export default function GuiaEarth() {
               {/* SECCIÓN 1 */}
               <div className="space-y-4">
                 <h2 id="que-es-earth" className="scroll-mt-28 text-2xl font-bold flex items-center gap-2">
-                  🧭 1. ¿Qué es EARTH?
+                  <MapIcon className="w-6 h-6 text-cyan-400" />
+                  1. ¿Qué es EARTH?
                 </h2>
 
                 <p className="text-slate-300 leading-relaxed">
@@ -77,7 +82,8 @@ export default function GuiaEarth() {
               {/* SECCIÓN 2 */}
               <div className="space-y-4">
                 <h2 id="iniciando" className="scroll-mt-28 text-2xl font-bold flex items-center gap-2">
-                  🏁 2. Iniciando en EARTH
+                  <RocketLaunchIcon className="w-6 h-6 text-cyan-400" />
+                  2. Iniciando en EARTH
                 </h2>
 
                 <p className="text-slate-300 leading-relaxed">
@@ -101,7 +107,8 @@ export default function GuiaEarth() {
               {/* SECCIÓN 3 INTRO */}
               <div>
                 <h2 id="comandos" className="scroll-mt-28 text-2xl font-bold flex items-center gap-2">
-                  🟥 3. Comandos Esenciales
+                  <CommandLineIcon className="w-6 h-6 text-cyan-400" />
+                  3. Comandos Esenciales
                 </h2>
                 <p className="text-slate-300 leading-relaxed">
                   A continuación encontrarás los comandos principales organizados por categoría.  
@@ -116,7 +123,10 @@ export default function GuiaEarth() {
 
               {/* Países */}
               <div>
-                <h3 id="paises" className="text-xl font-semibold mb-2 scroll-mt-28">🏳️ Comandos de Países</h3>
+                <h3 id="paises" className="text-xl font-semibold mb-2 scroll-mt-28 flex items-center gap-2">
+                  <FlagIcon className="w-5 h-5 text-cyan-400" />
+                  Comandos de Países
+                </h3>
                 <div className="overflow-x-auto rounded border border-slate-800">
                   <table className="min-w-full text-sm">
                     <thead className="bg-slate-900">
@@ -148,7 +158,10 @@ export default function GuiaEarth() {
 
               {/* Viajes */}
               <div>
-                <h3 id="viajes" className="text-xl font-semibold mb-2 scroll-mt-28">🧭 Viajes y Exploración</h3>
+                <h3 id="viajes" className="text-xl font-semibold mb-2 scroll-mt-28 flex items-center gap-2">
+                  <MapPinIcon className="w-5 h-5 text-cyan-400" />
+                  Viajes y Exploración
+                </h3>
                 <div className="overflow-x-auto rounded border border-slate-800">
                   <table className="min-w-full text-sm">
                     <thead className="bg-slate-900">
@@ -172,7 +185,10 @@ export default function GuiaEarth() {
 
               {/* Protección */}
               <div>
-                <h3 id="proteccion" className="text-xl font-semibold mb-2 scroll-mt-28">🛡️ Protección y Terreno</h3>
+                <h3 id="proteccion" className="text-xl font-semibold mb-2 scroll-mt-28 flex items-center gap-2">
+                  <ShieldCheckIcon className="w-5 h-5 text-cyan-400" />
+                  Protección y Terreno
+                </h3>
                 <div className="overflow-x-auto rounded border border-slate-800">
                   <table className="min-w-full text-sm">
                     <thead className="bg-slate-900">
@@ -198,7 +214,10 @@ export default function GuiaEarth() {
 
               {/* Economía */}
               <div>
-                <h3 id="economia" className="text-xl font-semibold mb-2 scroll-mt-28">💰 Economía & Comercio</h3>
+                <h3 id="economia" className="text-xl font-semibold mb-2 scroll-mt-28 flex items-center gap-2">
+                  <CurrencyDollarIcon className="w-5 h-5 text-cyan-400" />
+                  Economía & Comercio
+                </h3>
                 <div className="overflow-x-auto rounded border border-slate-800">
                   <table className="min-w-full text-sm">
                     <thead className="bg-slate-900">
@@ -228,7 +247,10 @@ export default function GuiaEarth() {
 
               {/* MCMMO */}
               <div>
-                <h3 id="mcmmo" className="text-xl font-semibold mb-2 scroll-mt-28">🔥 MCMMO & Estadísticas</h3>
+                <h3 id="mcmmo" className="text-xl font-semibold mb-2 scroll-mt-28 flex items-center gap-2">
+                  <Cog6ToothIcon className="w-5 h-5 text-cyan-400" />
+                  MCMMO & Estadísticas
+                </h3>
                 <div className="overflow-x-auto rounded border border-slate-800">
                   <table className="min-w-full text-sm">
                     <thead className="bg-slate-900">
@@ -251,7 +273,10 @@ export default function GuiaEarth() {
 
               {/* Extras */}
               <div>
-                <h3 id="extras" className="text-xl font-semibold mb-2 scroll-mt-28">🎒 Extras de Jugabilidad</h3>
+                <h3 id="extras" className="text-xl font-semibold mb-2 scroll-mt-28 flex items-center gap-2">
+                  <SparklesIcon className="w-5 h-5 text-cyan-400" />
+                  Extras de Jugabilidad
+                </h3>
                 <div className="overflow-x-auto rounded border border-slate-800">
                   <table className="min-w-full text-sm">
                     <thead className="bg-slate-900">
@@ -277,7 +302,10 @@ export default function GuiaEarth() {
 
               {/* Vehículos */}
               <div>
-                <h3 className="text-xl font-semibold mb-2">🚗 Vehículos & Autos</h3>
+                <h3 className="text-xl font-semibold mb-2 flex items-center gap-2">
+                  <MapPinIcon className="w-5 h-5 text-cyan-400" />
+                  Vehículos & Autos
+                </h3>
                 <div className="overflow-x-auto rounded border border-slate-800">
                   <table className="min-w-full text-sm">
                     <thead className="bg-slate-900">
@@ -299,7 +327,10 @@ export default function GuiaEarth() {
 
               {/* Minijuegos */}
               <div>
-                <h3 className="text-xl font-semibold mb-2">🎲 Apuestas & Minijuegos</h3>
+                <h3 className="text-xl font-semibold mb-2 flex items-center gap-2">
+                  <SparklesIcon className="w-5 h-5 text-cyan-400" />
+                  Apuestas & Minijuegos
+                </h3>
                 <div className="overflow-x-auto rounded border border-slate-800">
                   <table className="min-w-full text-sm">
                     <thead className="bg-slate-900">
@@ -322,7 +353,10 @@ export default function GuiaEarth() {
 
               {/* Profesiones */}
               <div>
-                <h3 className="text-xl font-semibold mb-2">🧪 Oficios & Profesiones</h3>
+                <h3 className="text-xl font-semibold mb-2 flex items-center gap-2">
+                  <Cog6ToothIcon className="w-5 h-5 text-cyan-400" />
+                  Oficios & Profesiones
+                </h3>
                 <div className="overflow-x-auto rounded border border-slate-800">
                   <table className="min-w-full text-sm">
                     <thead className="bg-slate-900">
@@ -347,7 +381,10 @@ export default function GuiaEarth() {
 
               {/* Staff */}
               <div>
-                <h3 id="staff" className="text-xl font-semibold mb-2 scroll-mt-28">🏛️ Staff & Administración</h3>
+                <h3 id="staff" className="text-xl font-semibold mb-2 scroll-mt-28 flex items-center gap-2">
+                  <ShieldCheckIcon className="w-5 h-5 text-cyan-400" />
+                  Staff & Administración
+                </h3>
                 <div className="overflow-x-auto rounded border border-slate-800">
                   <table className="min-w-full text-sm">
                     <thead className="bg-slate-900">
@@ -370,7 +407,10 @@ export default function GuiaEarth() {
 
               {/* Consejos */}
               <div>
-                <h2 id="consejos" className="text-2xl font-bold mt-6 scroll-mt-28">🌟 4. Consejos para Progresar</h2>
+                <h2 id="consejos" className="text-2xl font-bold mt-6 scroll-mt-28 flex items-center gap-2">
+                  <StarIcon className="w-6 h-6 text-cyan-400" />
+                  4. Consejos para Progresar
+                </h2>
                 <ul className="list-disc ml-6 mt-3 text-slate-300 space-y-1">
                   <li>Usa <code>/jobs</code> para generar dinero constante.</li>
                   <li>Únete a un país activo.</li>

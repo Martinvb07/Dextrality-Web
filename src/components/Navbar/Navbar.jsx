@@ -68,19 +68,19 @@ const Navbar = ({ onCopyIP }) => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 border-b border-teal-500/30 transition-all duration-300 bg-slate-900
+      className={`fixed top-0 left-0 right-0 z-50 border-b border-teal-500/30 transition-all duration-300
         ${isScrolled ? 'shadow-[0_4px_30px_rgba(109,204,193,0.15)]' : ''}`}
+      style={{ backgroundColor: 'rgb(49, 49, 49)' }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex items-center space-x-3 group cursor-pointer">
+          <div className="flex items-center group cursor-pointer py-1">
             <img
               src="/logo_fin_fondo.png"
               alt="Dextrality Logo"
-              className="w-11 h-11 object-contain group-hover:scale-105 transition-transform duration-300 logo-glow"
+              className="w-20 h-20 object-contain group-hover:scale-105 transition-transform duration-300 logo-glow"
             />
-            <span className="text-xl font-bold text-gradient">DEXTRALITY</span>
           </div>
 
           {/* Desktop Navigation */}
@@ -140,7 +140,7 @@ const Navbar = ({ onCopyIP }) => {
       </div>
 
       {/* Mobile Menu */}
-      <div className={`${isMobileMenuOpen ? 'block' : 'hidden'} md:hidden bg-slate-800/98 border-t border-teal-500/30`}>
+      <div className={`${isMobileMenuOpen ? 'block' : 'hidden'} md:hidden border-t border-teal-500/30`} style={{ backgroundColor: 'rgb(49, 49, 49)' }}>
         <div className="px-4 py-4 space-y-2">
           {NAV_LINKS.map(link => (
             link.href.startsWith('/') ? (

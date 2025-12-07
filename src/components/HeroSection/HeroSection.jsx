@@ -54,7 +54,7 @@ const HeroSection = () => {
       <div className="absolute inset-0 z-0">
         <div
           className="hero-bg absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('https://w.wallhaven.cc/full/7p/wallhaven-7pe3xy.jpg')" }}
+          style={{ backgroundImage: "url('/hero-bg.png')" }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-slate-900/50 via-slate-900/30 to-slate-900"></div>
       </div>

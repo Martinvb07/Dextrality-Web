@@ -6,7 +6,7 @@
 @import './styles/hero.css';
 @import './styles/cards.css';
 @import './styles/team.css';
-@import './styles/loading.css';
+/* Removed loading screen styles */
 
 /* If you later provide .woff2/.woff files, add them here for better web performance:
 @font-face {
@@ -35,14 +35,14 @@
   --brown: #8B5A2B;
   --brown-dark: #5D3A1A;
   --brown-light: #A67B4D;
-  --bg-dark: #0f172a;
+  --bg-dark: #171615;
   --bg-medium: #1e293b;
   --bg-card: rgba(30, 41, 59, 0.7);
 }
 
 /* ===== BASE STYLES ===== */
 * {
-  font-family: 'MinecraftSeven-v2', 'Press Start 2P', 'MinecraftSeven', 'Noto Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   scroll-behavior: smooth;
 }
 
@@ -57,6 +57,7 @@ html, body {
 body {
   font-size: 16px;
   line-height: 1.45;
+  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   /* Forzar fondo oscuro y color legible en caso de que las utilidades de Tailwind no carguen */
   background-color: var(--bg-dark) !important;
   color: #cbd5e1 !important;
@@ -760,7 +761,7 @@ h1, h2, h3, h4, h5, h6, .section-title {
 .team-modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(15, 23, 42, 0.85);
+  background: rgba(23, 22, 21, 0.85);
   backdrop-filter: blur(6px);
   display: flex;
   align-items: center;
@@ -776,12 +777,12 @@ h1, h2, h3, h4, h5, h6, .section-title {
 
 .team-modal {
   width: min(900px, 95%);
-  background: linear-gradient(135deg, rgba(30,41,59,0.95), rgba(30,41,59,0.9));
-  border: 1px solid rgba(109,204,193,0.3);
+  background: var(--bg-dark);
+  border: 1px solid rgba(109,204,193,0.25);
   border-radius: 1.5rem;
   padding: 2rem;
   position: relative;
-  box-shadow: 0 25px 60px rgba(0,0,0,0.6), 0 0 40px rgba(109,204,193,0.15);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.6), 0 0 40px rgba(109,204,193,0.12);
   animation: modalPop 0.35s cubic-bezier(0.22,1,0.36,1);
   max-height: 90vh; /* Allow long content to scroll */
   overflow: auto;

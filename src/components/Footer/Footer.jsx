@@ -17,7 +17,14 @@ const Footer = () => {
               <span className="text-2xl font-bold text-gradient">DEXTRALITY</span>
             </div>
             <p className="text-gray-400 max-w-md">El mejor servidor de Minecraft. Java & Bedrock.</p>
-          </div>
+            
+            <p className="text-sm text-gray-300 font-semibold mt-1">
+              Dextrality Network, un producto de contacto@dextrality.net
+            </p>
+            <p className="text-sm text-gray-400">
+              No estamos afiliados ni somos respaldados por Mojang AB.
+            </p>  
+            </div>
           <div className="flex space-x-4">
             <a href="#" className="social-link">
               <DiscordIcon className="w-5 h-5" />
@@ -37,7 +44,7 @@ const Footer = () => {
               alt="Martin avatar"
               className="w-10 h-10 rounded-md shadow"
             />
-            <p className="text-gray-500 text-sm">2025 Dextrality Network. By Martin</p>
+            <p className="text-gray-500 text-sm">Dextrality Network. By Martin</p>
           </div>
         </div>
       </div>

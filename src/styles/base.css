@@ -3,9 +3,9 @@
   * { scroll-behavior: smooth; }
 
   html, body {
-    -webkit-font-smoothing: none; /* keep pixel edges */
+    -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    text-rendering: geometricPrecision;
+    text-rendering: optimizeLegibility;
   }
 
   body {
@@ -16,16 +16,26 @@
     color: #cbd5e1 !important;
   }
 
-  /* Headings / UI use pixel font where appropriate */
+  /* Utility to apply the app background color */
+  .bg-app { background-color: var(--bg-dark) !important; }
+
+  /* Headings / UI now use Inter for a clean, modern look */
   h1, h2, h3, h4, h5, h6, .section-title {
-    font-family: 'MinecraftSeven-v2', 'Press Start 2P', 'Noto Sans', sans-serif;
+    font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
     line-height: 1.15;
     letter-spacing: 0.02em;
   }
 
   /* Utilities */
   .pixel { font-family: 'MinecraftSeven-v2', 'Press Start 2P', monospace !important; }
-  .no-pixel { font-family: 'Noto Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif !important; }
+  .no-pixel { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif !important; }
+
+  /* Fuerza Inter en toda la app, anulando herencias de la pixel font */
+  html, body, #root, #root * {
+    font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif !important;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
 
   .text-gradient {
     background: linear-gradient(135deg, #6DCCC1 0%, #4ecdc4 40%, #D4A843 100%);

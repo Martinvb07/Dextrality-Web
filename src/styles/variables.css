@@ -8,7 +8,8 @@
   --brown: #8B5A2B;
   --brown-dark: #5D3A1A;
   --brown-light: #A67B4D;
-  --bg-dark: #0f172a;
+  /* Custom app background color requested */
+  --bg-dark: #171615;
   --bg-medium: #1e293b;
   --bg-card: rgba(30, 41, 59, 0.7);
 }

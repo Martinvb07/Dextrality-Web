@@ -16,7 +16,8 @@
 	.team-role { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; }
 	.team-role.owner { background: linear-gradient(135deg, #fbbf24, #f59e0b); color: #1e293b; }
 	.team-role.admin { background: linear-gradient(135deg, #ef4444, #dc2626); color: white; }
-	.team-modal-overlay { position: fixed; inset: 0; background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(6px); display: flex; align-items: center; justify-content: center; z-index: 1000; animation: fadeIn 0.25s ease forwards; }
-	.team-modal { width: min(900px, 95%); background: linear-gradient(135deg, rgba(30,41,59,0.95), rgba(30,41,59,0.9)); border: 1px solid rgba(109,204,193,0.3); border-radius: 1.5rem; padding: 2rem; position: relative; box-shadow: 0 25px 60px rgba(0,0,0,0.6), 0 0 40px rgba(109,204,193,0.15); animation: modalPop 0.35s cubic-bezier(0.22,1,0.36,1); max-height: 90vh; overflow: auto; }
+	.team-modal-overlay { position: fixed; inset: 0; background: rgba(23, 22, 21, 0.85); backdrop-filter: blur(6px); display: flex; align-items: center; justify-content: center; z-index: 1000; animation: fadeIn 0.25s ease forwards; }
+	.team-modal { width: min(900px, 95%); background: var(--bg-dark); border: 1px solid rgba(109,204,193,0.25); border-radius: 1.5rem; padding: 2rem; position: relative; box-shadow: 0 25px 60px rgba(0,0,0,0.6), 0 0 40px rgba(109,204,193,0.12); animation: modalPop 0.35s cubic-bezier(0.22,1,0.36,1); max-height: 90vh; overflow: auto; }
+	.team-modal, .team-modal * { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
 	.team-modal-close { position: absolute; top: 0.75rem; right: 0.75rem; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; background: rgba(109,204,193,0.15); border: 1px solid rgba(109,204,193,0.4); color: #6DCCC1; font-size: 1.1rem; border-radius: 0.75rem; cursor: pointer; transition: all 0.3s; }
 }

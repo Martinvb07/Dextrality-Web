@@ -1,11 +1,14 @@
 @layer components {
 	/* Navigation / header styles */
-	.nav-link { padding: 0.5rem 1rem; font-size: 0.875rem; font-weight: 600; color: #94a3b8; border-radius: 0.5rem; transition: all 0.3s; }
-	.nav-link:hover, .nav-link.active { color: #6DCCC1; background: rgba(109, 204, 193, 0.15); }
+	.nav-link { padding: 0.5rem 1rem; font-size: 0.95rem; font-weight: 700; color: #ffffff; border-radius: 0.6rem; transition: all 0.2s; }
+	.nav-link:hover { color: #ffffff; opacity: 0.9; }
+	.nav-link.active { color: #ffffff; background: #4f6cf8; }
 
-	.server-ip-btn { padding: 0.5rem 1rem; background: linear-gradient(135deg, rgba(109, 204, 193, 0.2) 0%, rgba(45, 212, 191, 0.2) 100%); border: 1px solid rgba(109, 204, 193, 0.4); border-radius: 0.75rem; transition: all 0.3s; }
-	.server-ip-btn:hover { background: linear-gradient(135deg, rgba(109, 204, 193, 0.35) 0%, rgba(45, 212, 191, 0.35) 100%); border-color: #6DCCC1; transform: translateY(-2px); box-shadow: 0 8px 25px rgba(109, 204, 193, 0.3); }
+	.server-ip-btn { padding: 0.5rem 1rem; border-radius: 0.6rem; font-weight: 700; }
 
 	/* Ensure header uses pixel font */
-	.nav-link, .navbar a, .logo-text, .brand { font-family: 'MinecraftSeven-v2', 'Press Start 2P', monospace; -webkit-font-smoothing: none; text-rendering: geometricPrecision; }
+	.nav-link, .navbar a, .logo-text, .brand { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+
+	/* Aumenta grosor y presencia en la barra de navegación */
+	.navbar a, .nav-link, .brand, .logo-text { font-weight: 700; letter-spacing: 0.02em; }
 }

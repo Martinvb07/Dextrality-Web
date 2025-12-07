@@ -54,7 +54,7 @@ const GameModesSection = () => {
   ];
 
   return (
-    <section id="modos" className="relative py-24 bg-slate-800">
+    <section id="modos" className="relative py-24 bg-app">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">

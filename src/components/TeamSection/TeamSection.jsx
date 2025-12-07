@@ -48,7 +48,7 @@ const TeamSection = () => {
       id: 1,
       name: 'German Antonio',
       mcName: 'DextralityEarth',
-      role: '👑 OWNER',
+      role: '👑 Owner',
       roleClass: 'owner',
       bio: 'Fundador de Dextrality.',
       bioLong: 'Desde la idea inicial hasta la visión actual del proyecto, lidera la estrategia, el equipo y las decisiones clave. Apasionado por crear una experiencia única y sostenible para la comunidad.',
@@ -62,8 +62,8 @@ const TeamSection = () => {
       name: 'Himako',
       mcName: 'Himako',
       roles: [
-        { label: '⚜️ HIGH ADMIN', className: 'admin' },
-        { label: '🏗️ BUILDER', className: 'builder' }
+        { label: '⚜️ High Admin', className: 'admin' },
+        { label: '🏗️ Builder', className: 'builder' }
       ],
       bio: 'Alto administrador y constructor del servidor.',
       bioLong: 'Especialista en estructuración y soporte avanzado. Supervisa procesos internos y estándares de construcción, asegurando calidad y consistencia.',
@@ -77,8 +77,8 @@ const TeamSection = () => {
       name: 'Martind07',
       mcName: 'Martind07',
       roles: [
-        { label: '🛡️ ADMIN', className: 'admin' },
-        { label: '💻 DEVELOPER', className: 'developer' }
+        { label: '🛡️ Admin', className: 'admin' },
+        { label: '💻 Developer', className: 'developer' }
       ],
       bio: 'Administrador y desarrollador del servidor.',
       bioLong: 'Enfocado en sistemas estables, escalabilidad y nuevas funcionalidades. Implementa integraciones y optimiza la experiencia técnica.',
@@ -92,9 +92,9 @@ const TeamSection = () => {
       name: 'Gallus',
       mcName: 'GallusReiniger_',
       roles: [
-        { label: '📋 MANAGER', className: 'manager' },
-        { label: '🎯 COORDINADOR', className: 'coordinator' },
-        { label: '🏗️ BUILDER', className: 'builder' }
+        { label: '📋 Manager', className: 'manager' },
+        { label: '🎯 Coordinador', className: 'coordinator' },
+        { label: '🏗️ Builder', className: 'builder' }
       ],
       bio: 'Manager, coordinador y constructor del equipo.',
       bioLong: 'Mantiene el flujo organizativo y coordina áreas para cumplir objetivos. Refuerza comunicación y planificación.',
@@ -107,7 +107,7 @@ const TeamSection = () => {
       id: 5,
       name: 'Cardan',
       mcName: 'Cardan91',
-      role: '⚙️ CONFIG',
+      role: '⚙️ Config',
       roleClass: 'config',
       bio: 'Configurador del servidor.',
       bioLong: 'Apoya en ajustes finos y pruebas internas para nuevos módulos.',
@@ -120,7 +120,7 @@ const TeamSection = () => {
       id: 6,
       name: 'Dany',
       mcName: 'Danygch1',
-      role: '🔨 MODERADOR',
+      role: '🔨 Moderador',
       roleClass: 'moderator',
       bio: 'Moderador del servidor.',
       bioLong: 'Supervisa la comunidad y fomenta la convivencia, gestionando reportes y dudas.',
@@ -133,7 +133,7 @@ const TeamSection = () => {
       id: 7,
       name: 'Hatsky',
       mcName: 'Willyrex',
-      role: '🌟 TRIAL',
+      role: '🌟 Trial',
       roleClass: 'trial',
       bio: 'Miembro en pruebas.',
       bioLong: 'En periodo de adaptación aportando apoyo básico y aprendiendo protocolos.',
@@ -146,7 +146,7 @@ const TeamSection = () => {
       id: 8,
       name: 'iCHAVO',
       mcName: 'iCHAVO',
-      role: '🌟 TRIAL',
+      role: '🌟 Trial',
       roleClass: 'trial',
       bio: 'Miembro en pruebas.',
       bioLong: 'Participa en tareas iniciales y colabora en pequeñas mejoras.',
@@ -299,7 +299,7 @@ const TeamSection = () => {
   }, []);
 
   return (
-    <section id="equipo" className="relative py-24 bg-gradient-to-b from-slate-800 to-slate-900 overflow-hidden">
+    <section id="equipo" className="relative py-24 bg-app overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="section-title"><span className="text-gradient">Conoce al Equipo</span></h2>
