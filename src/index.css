@@ -201,18 +201,19 @@ h1, h2, h3, h4, h5, h6, .section-title {
 }
 
 .server-ip-btn {
-  padding: 0.5rem 1rem;
-  background: linear-gradient(135deg, rgba(109, 204, 193, 0.2) 0%, rgba(45, 212, 191, 0.2) 100%);
-  border: 1px solid rgba(109, 204, 193, 0.4);
-  border-radius: 0.75rem;
-  transition: all 0.3s;
+  padding: 0.6rem 1.1rem;
+  background: linear-gradient(90deg, rgba(59,130,246,0.28) 0%, rgba(96,165,250,0.28) 100%);
+  border: none;
+  border-radius: 9999px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, opacity 0.2s ease;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+  backdrop-filter: saturate(140%) blur(6px);
 }
 
 .server-ip-btn:hover {
-  background: linear-gradient(135deg, rgba(109, 204, 193, 0.35) 0%, rgba(45, 212, 191, 0.35) 100%);
-  border-color: #6DCCC1;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(109, 204, 193, 0.3);
+  background: linear-gradient(90deg, rgba(59,130,246,0.4) 0%, rgba(96,165,250,0.4) 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.45);
 }
 
 /* ===== HERO SECTION ===== */

@@ -68,7 +68,7 @@ const Navbar = ({ onCopyIP }) => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 border-b border-teal-500/30 transition-all duration-300
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300
         ${isScrolled ? 'shadow-[0_4px_30px_rgba(109,204,193,0.15)]' : ''}`}
       style={{ backgroundColor: 'rgb(49, 49, 49)' }}
     >
@@ -117,10 +117,14 @@ const Navbar = ({ onCopyIP }) => {
 
           {/* Server IP Button (Desktop) */}
           <div className="hidden md:flex items-center">
-            <button onClick={onCopyIP} className="server-ip-btn group">
+            <button
+              onClick={onCopyIP}
+              className="server-ip-btn group"
+              title="Click para copiar IP"
+            >
               <span className="flex items-center space-x-2">
                 <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
-                <span className="font-mono text-sm">PLAY.DEXTRALITY.NET</span>
+                <span className="font-mono tracking-wide text-sm">PLAY.DEXTRALITY.NET</span>
               </span>
             </button>
           </div>
@@ -140,7 +144,7 @@ const Navbar = ({ onCopyIP }) => {
       </div>
 
       {/* Mobile Menu */}
-      <div className={`${isMobileMenuOpen ? 'block' : 'hidden'} md:hidden border-t border-teal-500/30`} style={{ backgroundColor: 'rgb(49, 49, 49)' }}>
+      <div className={`${isMobileMenuOpen ? 'block' : 'hidden'} md:hidden`} style={{ backgroundColor: 'rgb(49, 49, 49)' }}>
         <div className="px-4 py-4 space-y-2">
           {NAV_LINKS.map(link => (
             link.href.startsWith('/') ? (
