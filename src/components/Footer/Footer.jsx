@@ -11,7 +11,7 @@ const Footer = () => {
               <img
                 src="/logo_fin_fondo.png"
                 alt="Dextrality Logo"
-                className="w-13 h-13 object-contain logo-glow"
+                className="w-13 h-13 object-contain"
                 style={{ width: '52px', height: '52px' }}
               />
               <span className="text-2xl font-bold text-gradient">Dextrality</span>
@@ -19,7 +19,7 @@ const Footer = () => {
             <p className="text-gray-400 max-w-md">El mejor servidor de Minecraft. Java & Bedrock.</p>
             
             <p className="text-sm text-gray-300 font-semibold mt-1">
-              Dextrality Network, un producto de contacto@dextrality.net
+              Dextrality Network, un producto de dextrality.host@gmail.com
             </p>
             <p className="text-sm text-gray-400">
               No estamos afiliados ni somos respaldados por Mojang AB.

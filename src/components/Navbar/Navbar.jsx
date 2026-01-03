@@ -73,18 +73,18 @@ const Navbar = ({ onCopyIP }) => {
       style={{ backgroundColor: 'rgb(49, 49, 49)' }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="relative flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center group cursor-pointer py-1">
             <img
               src="/logo_fin_fondo.png"
               alt="Dextrality Logo"
-              className="w-20 h-20 object-contain group-hover:scale-105 transition-transform duration-300 logo-glow"
+              className="w-20 h-20 object-contain group-hover:scale-105 transition-transform duration-300"
             />
           </div>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-1">
+          {/* Desktop Navigation (centered) */}
+          <div className="absolute left-1/2 transform -translate-x-1/2 hidden md:flex items-center space-x-1 z-10">
               {NAV_LINKS.map(link => (
                 link.href.startsWith('/') ? (
                   <Link

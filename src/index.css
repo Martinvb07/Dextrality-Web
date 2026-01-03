@@ -619,7 +619,7 @@ h1, h2, h3, h4, h5, h6, .section-title {
   width: 220px;
   padding: 1.5rem;
   background: linear-gradient(135deg, rgba(30, 41, 59, 0.95), rgba(30, 41, 59, 0.85));
-  border: 1px solid rgba(109, 204, 193, 0.2);
+  border: none;
   border-radius: 1.25rem;
   text-align: center;
   transition: all 0.4s ease;
@@ -635,7 +635,7 @@ h1, h2, h3, h4, h5, h6, .section-title {
   inset: 0;
   border-radius: 1.25rem;
   padding: 1px;
-  background: linear-gradient(135deg, transparent, rgba(212, 168, 67, 0.3), transparent);
+  background: linear-gradient(135deg, transparent, rgba(212, 168, 67, 0.0), transparent);
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
@@ -646,10 +646,7 @@ h1, h2, h3, h4, h5, h6, .section-title {
 
 .team-card:hover {
   transform: translateY(-8px);
-  border-color: rgba(212, 168, 67, 0.4);
-  box-shadow:
-    0 20px 40px rgba(0, 0, 0, 0.4),
-    0 0 30px rgba(109, 204, 193, 0.1);
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.35);
 }
 
 /* Mantener elevación visible al interactuar y sobre el degradado lateral */
@@ -666,7 +663,7 @@ h1, h2, h3, h4, h5, h6, .section-title {
 }
 
 .team-card:hover::before {
-  opacity: 1;
+  opacity: 0;
 }
 
 .team-avatar {
