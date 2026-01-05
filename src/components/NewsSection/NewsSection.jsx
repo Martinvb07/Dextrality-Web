@@ -41,6 +41,35 @@ const NewsSection = () => {
       image: '/Banner.png',
       tag: 'Anuncio',
       tagType: 'announcement',
+      title: 'Bienvenidos de nuevo a casa',
+      description: 'Tras una pausa y mucho trabajo, el mundo vuelve a cobrar vida.',
+      date: 'Enero, 2026',
+      mode: 'Vanilla',
+      contentHtml:
+        '<p>✨ <strong>¡Bienvenidos, una vez más!</strong> ✨<br/>Este mundo vuelve a cobrar vida...</p>' +
+        '<p>Cada bloque colocado, cada sistema creado y cada decisión tomada tuvo un solo propósito: construir un lugar donde los usuarios pudieran divertirse, compartir y crear recuerdos inolvidables.</p>' +
+        '<p>Tras un tiempo de pausa, aprendizaje y trabajo silencioso, regresamos con más experiencia, con la misma pasión de siempre y con el deseo intacto de ofrecer un mundo vivo, justo y emocionante para todos ustedes.</p>' +
+        '<p>Las puertas vuelven a abrirse.<br/>El spawn vuelve a llenarse de pasos.<br/>Las historias continúan escribiéndose… bloque a bloque.</p>' +
+        '<p>En esta reapertura, la modalidad disponible actualmente es <strong>Vanilla</strong>, ideal para disfrutar de la experiencia clásica de Minecraft mientras seguimos preparando el resto de modos.</p>' +
+        '<p>Gracias a quienes estuvieron, a quienes regresan y a quienes llegarán por primera vez. Este mundo existe por ustedes.</p>' +
+        '<p><strong>Bienvenidos de nuevo, a casa.</strong></p>',
+      highlights: [
+        'Regreso del mundo principal de Dextrality',
+        'Servidor pensado para divertirse, compartir y crear recuerdos',
+        'Compromiso con una experiencia justa y emocionante',
+        'Modalidad disponible actualmente: Vanilla'
+      ],
+      attachments: [
+        { type: 'image', url: '/Vainilla/spawn.png' },
+        { type: 'image', url: '/Vainilla/spawn2.png' }
+      ]
+    },
+    {
+      id: 2,
+      visible: true,
+      image: '/Banner.png',
+      tag: 'Anuncio',
+      tagType: 'announcement',
       title: 'Proximamente Reapertura',
       description: ' ¡Dextrality regresa más fuerte que nunca!',
       date: 'Diciembre, 2025',
@@ -65,7 +94,7 @@ const NewsSection = () => {
       ]
     },
     {
-      id: 2,
+      id: 3,
       visible: false,
       image: 'https://w.wallhaven.cc/full/01/wallhaven-0198wn.jpg',
       tag: 'Evento',
@@ -91,7 +120,7 @@ const NewsSection = () => {
     },
     {
       visible: false,
-      id: 3,
+      id: 4,
       image: 'https://w.wallhaven.cc/full/zy/wallhaven-zy7y3v.jpg',
       tag: 'Anuncio',
       tagType: 'announcement',

@@ -89,7 +89,7 @@ const HeroSection = () => {
           className="text-xl md:text-2xl text-gray-200 mb-8 animate-fade-in-up"
           style={{ animationDelay: '0.3s' }}
         >
-          Nos quedamos sin dinero
+          Tu nueva casa en Minecraft Java y Bedrock.
         </p>
 
         {/* Feature Pills */}
