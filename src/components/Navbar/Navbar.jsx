@@ -7,6 +7,7 @@ const NAV_LINKS = [
   { href: '#inicio', label: 'INICIO' },
   { href: '#noticias', label: 'NOTICIAS' },
   { href: '#modos', label: 'MODOS' },
+  { href: '/mapa', label: 'MAPA' },
   { href: '#equipo', label: 'EQUIPO' },
   { href: '/guias', label: 'GUIAS' }
 ];
@@ -86,7 +87,17 @@ const Navbar = ({ onCopyIP }) => {
           {/* Desktop Navigation (centered) */}
           <div className="absolute left-1/2 transform -translate-x-1/2 hidden md:flex items-center space-x-1 z-10">
               {NAV_LINKS.map(link => (
-                link.href.startsWith('/') ? (
+                link.external ? (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="nav-link"
+                  >
+                    {link.label}
+                  </a>
+                ) : link.href.startsWith('/') ? (
                   <Link
                     key={link.href}
                     to={link.href}
@@ -147,7 +158,17 @@ const Navbar = ({ onCopyIP }) => {
       <div className={`${isMobileMenuOpen ? 'block' : 'hidden'} md:hidden`} style={{ backgroundColor: 'rgb(49, 49, 49)' }}>
         <div className="px-4 py-4 space-y-2">
           {NAV_LINKS.map(link => (
-            link.href.startsWith('/') ? (
+            link.external ? (
+              <a
+                key={link.href}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block py-2 px-4 rounded-lg hover:bg-teal-500/20 transition-colors"
+              >
+                {link.label}
+              </a>
+            ) : link.href.startsWith('/') ? (
               <Link
                 key={link.href}
                 to={link.href}

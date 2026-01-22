@@ -9,6 +9,7 @@ import TeamSection from './components/TeamSection/TeamSection';
 import GuiasIndex from './pages/Guias/Index';
 import guides from './pages/Guias/guides';
 import { loadGuide } from './pages/Guias/loader.js';
+import Mapa from './pages/Mapa.jsx';
 
 
 function App() {
@@ -32,6 +33,9 @@ function App() {
                 </main>
               }
             />
+
+            {/* MAPA */}
+            <Route path="/mapa" element={<Mapa />} />
 
             {/* Redirección */}
             <Route path="/guia" element={<Navigate to="/guias" replace />} />
